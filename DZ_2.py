@@ -38,14 +38,14 @@ arr_sum = [((-1) ** n) * (n + 0.5) * (bn(n, k * r) - an(n, k * r)) for n in rang
 summ = np.sum(arr_sum, axis = 0)
 sigma = (L ** 2) / math.pi * abs(summ) ** 2
 
-with open("results/data2.csv", "w") as file:
+with open(r'results/data2.csv', 'w') as file:
     writer = csv.writer (file)
     for i in range(0, len(f)):
         writer.writerow([i + 1, f[i], sigma[i]])
 
 plt.plot(f / 10e6, sigma)
-plt.xlabel("f, МГц")
-plt.ylabel("sigma, м^2")
+plt.xlabel('f, МГц')
+plt.ylabel('sigma, м^2')
 plt.title('Задание 2')
 plt.grid()
 plt.show()
