@@ -38,6 +38,8 @@ arr_sum = [((-1) ** n) * (n + 0.5) * (bn(n, k * r) - an(n, k * r)) for n in rang
 summ = np.sum(arr_sum, axis = 0)
 sigma = (L ** 2) / math.pi * abs(summ) ** 2
 
+if not os.path.exists('results'):
+    os.mkdir('results')
 with open(r'results/data2.csv', 'w') as file:
     writer = csv.writer (file)
     for i in range(0, len(f)):
